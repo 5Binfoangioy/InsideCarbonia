@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odonomastica - Carbonia</title>
+  <link rel="stylesheet" href="style.css"> <!-- Collegamento al CSS aggiornato -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odonomastica - Carbonia</title>
+    <link rel="stylesheet" href="style.css">
+  
+    <!-- === LEAFLET CSS === -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+    <!-- === LEAFLET JS (Va messo qui o prima di /body) === -->
+    <!-- Si consiglia spesso di metterlo prima di /body per non bloccare il rendering, ma nel head funziona -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  </head>
+</head>
+
+<body>
+
+  <!-- Eventuale effetto Flashbang, se attivo
+  <div class="flashbang"></div>
+  -->
+
+  <div class="hero">
+    <div class="overlay"> <!-- Overlay opzionale per scurire bg hero -->
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="odonomastica.html">Odonomastica</a>
+        <a href="architettura.html">Architettura</a>
+        <a href="cambiamenti.html">Cambiamenti</a>
+      </nav>
+
+      <div class="hero-text">
+        <h1>Odonomastica di Carbonia</h1>
+        <p>Un viaggio nell'odonomastica di Carbonia: dalle origini fasciste alle trasformazioni post-belliche, le strade
+          raccontano la storia della città.</p>
+      </div>
+
+    </div> <!-- Fine .overlay -->
+  </div> <!-- Fine .hero -->
+
+
+  <main>
+
+    <!-- === INDICE INTERNO (SENZA STILI INLINE) === -->
+    <nav id="indice-interno" aria-label="Indice della pagina">
+      <h3>Indice della Pagina</h3>
+      <ul>
+        <li><a href="#introduzione">Introduzione</a></li>
+        <li><a href="#fondazione">Periodo di Fondazione</a></li>
+        <li><a href="#post-fascismo">Periodo Post-Fascista</a></li>
+        <li><a href="#sviluppi">Sviluppi Recenti</a></li>
+        <li><a href="#tabella">Tabella Riassuntiva</a></li>
+        <li><a href="#curiosita-finale">Curiosità</a></li>
+        <li><a href="#bibliografia">Bibliografia</a></li>
+      </ul>
+    </nav>
+    <!-- === FINE DELL'INDICE === -->
+
+
+    <section class="contenuto" id="introduzione">
+      <h2>Introduzione: Carbonia, una storia scritta nelle strade</h2>
+
+      <h3>Origine di Carbonia</h3>
+      <p>
+        La città di Carbonia, “città del Carbone”, fu inaugurata ufficialmente il 18 dicembre 1938, anche se i suoi lavori erano
+        già stati iniziati nel 1937. In quel momento l’Italia si trovava in un periodo di autarchia, in parte conseguenza delle
+        sanzioni imposte successive all’invasione dell’Etiopia orchestrata dal regime fascista.
+      </p>
+      <p>
+        Fu realizzato un piano urbanistico considerato moderno per l’epoca, pensato per agevolare l’accessibilità alle miniere
+        tramite le sue due vie principali. Ma trapelante forti distinzioni sociali riflettenti nell’architettura stessa degli
+        edifici. Oltretutto nacque come città-giardino con i suoi grandi parchi e tramite l’assegnazione di spazi verdi negli
+        alloggi della classe operaia.
+      </p>
+      <p>
+        Nacque dunque come “company-Town” per poter ospitare i minatori impiegati nella Grande Miniera di Serbariu.
+        Inizialmente, i lavoratori furono in maggioranza ex contadini o manovali, la prospettiva di trasferirsi con la famiglia
+        in una città che offriva loro un lavoro ed una casa stabile era particolarmente allettante.
+      </p>
+
+      <h3>L'Odonomastica e la sua importanza</h3>
+      <p>
+        L'Odonomastica è lo studio storico-linguistico dei nomi delle strade, piazze e più in generale, di tutte le aree di
+        circolazione di un centro abitato. Si occupa di analizzare l’origine, la storia ed il significato dei nomi assegnati a
+        questi spazi pubblici. L’Odonomastica riflette l’identità, la storia e l’ideologia riguardanti l’odonimo scelto.
+      </p>
+
+      <h3>Il caso di Carbonia</h3>
+      <p>
+        Gli odonimi sono stati usati come strumento propagandistico da parte del fascismo, strumentalizzando i simboli
+        dell’Antica Roma come Viale Impero (attuale Via Roma), riferimenti al Colonialismo come Via Tripoli oppure date
+        commemorative di eventi chiave, per esempio Piazza IX Maggio (divenuta Piazza I Maggio), infine, personaggi legati al
+        regime come via Italo Balbo (poi Via Manno).
+      </p>
+      <p>
+        La struttura utilizzata in questa analisi seguirà diverse fasi storiche:
+      </p>
+      <!-- Uso ul standard per questa lista descrittiva -->
+      <ul>
+        <li><strong>Fondazione:</strong> Dal periodo della progettazione fino alla caduta del regime fascista.</li>
+        <li><strong>Post-fascismo:</strong> Periodo della ridenominazione delle vie in seguito alla caduta del fascismo.
+        </li>
+        <li><strong>Sviluppi recenti:</strong> Analisi di piazze, strade moderne o nate di recente, caratteristiche
+          della Carbonia odierna.</li>
+      </ul>
+    </section>
+
+    <section class="contenuto" id="fondazione">
+      <h2>Periodo di Fondazione: L'impronta Fascista</h2>
+      <p>
+        Fu un periodo in cui la città, appena creata sotto il regime fascista, assunse caratteri tipici del fascismo,
+        influenzandone profondamente la toponomastica. Venne fatto un uso di nomi consono agli ideali dominanti
+        dell'epoca, perlopiù inneggianti allo spirito della forza, a figure aristocratiche o clericali, e al dominio
+        imperiale. Esempi significativi includono: <strong>Piazza Impero</strong> (oggi Piazza Matteotti) e <strong>Via
+          Addis Abeba</strong> (poi Via delle Fosse Ardeatine). Quest'ultima, capitale dell'Etiopia conquistata dal
+        regime, giocò un ruolo importante nell'aumentare il consenso verso Mussolini; fu successivamente rinominata per
+        commemorare una delle più efferate stragi compiute dai nazisti in Italia.
+      </p>
+      <p>
+        Attraverso le sue strade, Carbonia racconta cronologicamente il regime fascista, richiamando date significative.
+        Un esempio emblematico è <strong>Via XXIII Marzo</strong> (toponimo poi associato a Via Verona), la cui targa
+        originale in marmo, seppur più volte coperta da vernice, tende a riemergere. Il 23 Marzo commemora la fondazione
+        dei Fasci Italiani di Combattimento.
+      </p>
+
+      <!-- Segnaposto Immagine (usa <figure>) -->
+      <figure>
+        <img src="img/23marzo.png"
+          alt="Lastra in marmo originale di Via XXIII Marzo a Carbonia (Immagine Platzhalter)">
+        <figcaption>La controversa lastra di Via XXIII Marzo.</figcaption>
+      </figure>
+
+      <p>
+        Seguiva la celebrazione della Marcia su Roma con <strong>Via XXVIII Ottobre</strong> (poi Via Napoli), che
+        segnava il successo del regime e la sua ascesa al governo, per culminare con <strong>Piazza IX Maggio</strong>,
+        data della proclamazione dell'Impero.
+      </p>
+      <p>
+        Oltre alle date, la propaganda necessitava di figure carismatiche: nacquero così vie intitolate a personaggi
+        come <strong>Italo Balbo</strong> (poi Via Manno), ex camicia nera e violento esponente dello squadrismo
+        fascista, e il <strong>Duca d'Aosta</strong> (poi Via Deledda), generale distintosi nella Prima Guerra Mondiale.
+      </p>
+      <p>
+        <em>Curiosità:</em> Si narra che Mussolini stesso promosse la creazione di <strong>Via Predappio</strong> (con
+        riferimento alla sua frazione natale, Dovia), oggi rinominata <strong>Via Messina</strong>.
+      </p>
+      <p>
+        Le vie sopravvissute fino ad oggi da quel periodo includono <strong>Via XVIII Dicembre</strong> (data di
+        fondazione di Carbonia) e riferimenti territoriali e coloniali come <strong>Via Trieste</strong>, <strong>Via
+          Dalmazia</strong>, <strong>Viale Trento</strong>. Furono create anche vie connesse ad altre città minerarie
+        italiane strategiche per il regime fascista: <strong>Via Arsia</strong> e <strong>Via Istria</strong>.
+      </p>
+
+      <!-- Segnaposto Immagine (usa <figure>) -->
+      <figure>
+        <img src="img/fff.png"
+          alt="Cartina storica di Carbonia del periodo di fondazione (Immagine Platzhalter)">
+        <figcaption>Pianta di Carbonia risalente al periodo fascista (Inserire immagine reale).</figcaption>
+      </figure>
+
+      <p>
+        Erano già presenti anche vie dal carattere più "neutro", come <strong>Via Filippo Corridoni</strong>
+        (sindacalista rivoluzionario interventista, figura del passato recuperata dal regime), o legate al territorio
+        preesistente come <strong>Via Serbariu</strong> o <strong>Via Cannas</strong>.
+      </p>
+    </section>
+
+    <section class="contenuto" id="post-fascismo">
+      <h2>Periodo Post-Fascista: La Ridenominazione</h2>
+      <p>
+        Con il crollo del regime fascista e la nascita della Repubblica Italiana, sorse la necessità di "bonificare" la
+        toponomastica cittadina, affermando nuovi valori democratici e antifascisti in contrapposizione ai precedenti.
+      </p>
+
+      <h3>Da Onorificenze Fasciste ad Antifasciste</h3>
+      <p>
+        Molti omaggi al regime furono direttamente ribaltati, intitolando le vie ai loro antagonisti storici. Un caso
+        emblematico è <strong>Via dei Legionari</strong> (riferimento alle unità della Milizia Volontaria per la
+        Sicurezza Nazionale fascista e ai volontari in Spagna con Franco), trasformata in <strong>Via dei
+          Partigiani</strong>, simbolo della Resistenza.
+      </p>
+
+      <h3>Da Figure del Regime/Monarchia a Figure Democratiche/Risorgimentali</h3>
+      <p>
+        Il corso principale della città, precedentemente <strong>Viale Principe di Piemonte</strong> (titolo di Umberto
+        II di Savoia), fu intitolato a <strong>Viale Antonio Gramsci</strong>, in memoria del celebre politico, filosofo
+        e giornalista antifascista sardo, arrestato da Mussolini e morto in carcere durante il regime.
+      </p>
+      <p>
+        Non fu l'unico esponente della monarchia a essere rimosso dalla toponomastica: <strong>Via Vittorio Emanuele
+          III</strong> fu sostituita da <strong>Via Costituente</strong>, a simboleggiare la transizione repubblicana
+        sancita dall'Assemblea Costituente, e <strong>Via Regina Elena</strong> lasciò il posto a <strong>Via Giuseppe
+          Mazzini</strong>, figura chiave del Risorgimento italiano.
+      </p>
+      <p>
+        Similmente, figure legate al fascismo come <strong>Via Italo Balbo</strong> divennero <strong>Via Giuseppe
+          Manno</strong> (storico e politico sardo) e <strong>Via Duca d'Aosta</strong> fu ridedicata alla scrittrice
+        premio Nobel sarda <strong>Grazia Deledda</strong>.
+      </p>
+      <p>
+        Infine, la centralissima <strong>Piazza Impero</strong> fu dedicata a <strong>Giacomo Matteotti</strong> (Piazza
+        Matteotti), deputato socialista assassinato dagli squadristi fascisti per le sue denunce contro il regime. Anche
+        <strong>Via Addis Abeba</strong>, simbolo della conquista coloniale, venne rinominata <strong>Via Fosse
+          Ardeatine</strong>, a perenne memoria dell'omonimo eccidio nazista.
+      </p>
+      <p>
+        Un'altra sostituzione interessante è quella di <strong>Via Ubaldo Milli</strong> (l'ingegnere che scoprì il
+        bacino carbonifero del Sulcis) con <strong>Via Pietro Gobetti</strong>, intellettuale e giornalista
+        antifascista. Questa scelta evidenzia la volontà post-fascista di onorare figure legate alla lotta per la
+        libertà piuttosto che personaggi, pur importanti, legati alle ragioni tecniche della fondazione della città
+        sotto il regime.
+      </p>
+    </section>
+
+    <section class="contenuto" id="mappa-interattiva">
+      <h2>Mappa Odonomastica di Carbonia</h2>
+      <p>Esplora le vie e le piazze menzionate direttamente sulla mappa. Clicca sui marker (che aggiungeremo presto!) per
+        scoprire la loro storia.</p>
+      <!-- Il Div che conterrà la mappa Leaflet -->
+      <div id="map-container"
+        style="height: 500px; width: 100%; margin-top: 20px; border-radius: 8px; border: 1px solid #555;">
+        <!-- La mappa verrà caricata qui da JavaScript -->
+        <p style="padding: 20px; text-align: center; color: #aaa;">Caricamento mappa...</p>
+      </div>
+    </section>
+
+    <section class="contenuto" id="sviluppi">
+      <h2>Sviluppi Recenti e Casi Particolari</h2>
+
+      <h3>Costruzioni e Intitolazioni Moderne</h3>
+      <p>
+        Anche in tempi più recenti, la toponomastica si è arricchita. È stata creata <strong>Piazza Berlinguer</strong>,
+        in onore del politico sardo Enrico Berlinguer, figura di spicco del Partito Comunista Italiano, noto per la sua
+        proposta di "compromesso storico".
+      </p>
+      <p>
+        <strong>Piazza Rinascita</strong> è una piazza centrale, nota anche come "Piazza Monumento" per la presenza del
+        Monumento ai Caduti. Ristrutturata tra il 2006 e il 2008, rappresenta un importante punto di riferimento e il
+        suo nome evoca il rinnovamento della città.
+      </p>
+      <p>
+        <strong>Piazza del Minatore</strong>, con la sua caratteristica fontana-monumento, è fortemente legata
+        all'identità originaria di Carbonia. È un simbolo potente a ricordo delle difficili e pericolose condizioni di
+        lavoro che i minatori dovevano affrontare quotidianamente.
+      </p>
+
+      <h3>Casi Irrisolti o Ambigui</h3>
+      <p>
+        Il caso di <strong>Via Littoria / Via Azuni / Via Oberhausen</strong> è particolarmente complesso. Inizialmente
+        dedicata a Littoria (attuale Latina), città gemellata durante il fascismo, ci fu un tentativo fallito nel
+        dopoguerra di rinominarla Via Domenico Alberto Azuni (giurista e storico sardo). A causa della targa "Via
+        Littoria" rimasta intatta sulla Torre Civica (ex Torre Littoria), il nuovo nome non si consolidò mai nell'uso
+        comune. Nel 2013 si decise infine di dedicarla a <strong>Via Oberhausen</strong>, città tedesca gemellata con
+        Carbonia. Tuttavia, la confusione persiste: la via è spesso indicata erroneamente con nomi di vie vicine (come
+        Via Catania o Via Napoli) o semplicemente identificata tramite il punto di riferimento della Torre Civica.
+      </p>
+
+      <!-- Segnaposto Immagine (usa <figure>) -->
+      <figure>
+        <img src="img/via littoria.png"
+          alt="Targa superstite di Via Littoria sulla Torre Civica (Immagine Platzhalter)">
+        <figcaption>La targa originale di Via Littoria ancora visibile sulla Torre Civica (Inserire immagine reale).
+        </figcaption>
+      </figure>
+
+     
+      
+    </section>
+
+    <section class="contenuto" id="tabella">
+      <h2>Tabella Riassuntiva di Alcune Trasformazioni</h2>
+      <!-- Wrapper per scroll orizzontale su mobile -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome Originale (Fascista/Monarchico)</th>
+              <th>Nome Attuale (Post-Fascista/Repubblicano)</th>
+              <th>Significato del Cambiamento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Viale Impero</td>
+              <td>Via Roma</td>
+              <td>Da celebrazione imperialista a simbolo nazionale neutro</td>
+            </tr>
+            <tr>
+              <td>Piazza IX Maggio</td>
+              <td>Piazza I Maggio</td>
+              <td>Da data imperiale fascista a festa internazionale dei lavoratori</td>
+            </tr>
+            <tr>
+              <td>Piazza Impero</td>
+              <td>Piazza Matteotti</td>
+              <td>Da concetto fascista a memoria vittima antifascista</td>
+            </tr>
+            <tr>
+              <td>Viale Principe di Piemonte</td>
+              <td>Viale Antonio Gramsci</td>
+              <td>Da erede al trono monarchico a intellettuale antifascista sardo</td>
+            </tr>
+            <tr>
+              <td>Via dei Legionari</td>
+              <td>Via dei Partigiani</td>
+              <td>Da milizia fascista a combattenti della Resistenza</td>
+            </tr>
+            <tr>
+              <td>Via Italo Balbo</td>
+              <td>Via Giuseppe Manno</td>
+              <td>Da gerarca fascista a storico e politico sardo</td>
+            </tr>
+            <tr>
+              <td>Via Addis Abeba</td>
+              <td>Via Fosse Ardeatine</td>
+              <td>Da conquista coloniale a memoria eccidio nazista</td>
+            </tr>
+            <tr>
+              <td>Via Vittorio Emanuele III</td>
+              <td>Via Costituente</td>
+              <td>Da sovrano complice del fascismo a simbolo della nascita della Repubblica</td>
+            </tr>
+            <tr>
+              <td>Via Regina Elena</td>
+              <td>Via Giuseppe Mazzini</td>
+              <td>Da regina consorte a padre della Patria risorgimentale</td>
+            </tr>
+            <tr>
+              <td>Via Duca d'Aosta</td>
+              <td>Via Grazia Deledda</td>
+              <td>Da generale della Grande Guerra a scrittrice sarda premio Nobel</td>
+            </tr>
+            <tr>
+              <td>Via Ubaldo Milli</td>
+              <td>Via Pietro Gobetti</td>
+              <td>Da scopritore bacino carbonifero a intellettuale antifascista</td>
+            </tr>
+            <tr>
+              <td>Via Predappio</td>
+              <td>Via Messina</td>
+              <td>Da riferimento alla città natale di Mussolini a nome geografico neutro</td>
+            </tr>
+          </tbody>
+        </table>
+      </div> <!-- Fine .table-container -->
+    </section>
+
+    <section class="contenuto" id="curiosita-finale">
+      <h2>Curiosità Finale</h2>
+      <p>
+        <strong>Monte Rosmarino dedicato a Mussolini?</strong> Sembra che un'eventuale dedica a Mussolini per il Monte
+        Rosmarino sia rimasta solo sulla carta o in vecchie mappe, poiché non sono mai state rinvenute targhe o lastre
+        commemorative in loco che attestino tale intitolazione.
+      </p>
+    </section>
+
+    <section class="contenuto" id="bibliografia">
+      <h2>Bibliografia e Fonti</h2>
+      <ul>
+        <li>Cartina storica rinvenuta nell'archivio di storia locale della Grande Miniera di Serbariu.</li>
+        <li>Sanna, Antonella e Peghin, G. <em>Carbonia città del Novecento</em>. Edizioni AM&D, Cagliari, 2005. [Dati
+          aggiunti - verificare se corretti]</li>
+        <li>"Carbonia, esempio mondiale di città giardino: parola dell’urbanista Antonello Sanna". L'Unione Sarda
+          Online. Link: <a
+            href="https://www.unionesarda.it/cultura/carbonia-esempio-mondiale-di-citta-giardino-parola-dellurbanista-antonello-sanna-ol14pfr1"
+            target="_blank">https://www.unionesarda.it/cultura/carbonia-esempio-mondiale-di-citta-giardino-parola-dellurbanista-antonello-sanna-ol14pfr1</a>
+          (Consultato il 12/05/2025 )</li>
+        <!-- Aggiungere altre fonti se utilizzate -->
+      </ul>
+      <p><em>Nota: Si raccomanda di verificare i dati bibliografici e aggiungere la data di consultazione per le fonti
+          online.</em></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2024 Francesco Mezzena. Tutti i diritti riservati.</p>
+      <div class="socials">
+        <a href="#">Facebook</a> <!-- Inserire link # o reali -->
+        <a href="#">Instagram</a> <!-- Inserire link # o reali -->
+        <a href="#">Contatti</a> <!-- Inserire link # o reali -->
+      </div>
+    </div>
+  </footer>
+
+  <!-- === SCRIPT PER SCROLL INTERNO === -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const indiceNav = document.getElementById('indice-interno');
+
+      if (indiceNav) {
+        indiceNav.addEventListener('click', function (event) {
+          if (event.target.tagName === 'A' && event.target.hash) {
+            event.preventDefault();
+            const targetId = event.target.hash;
+            try {
+              const targetElement = document.querySelector(targetId);
+              if (targetElement) {
+                targetElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start' // Allinea l'inizio dell'elemento con l'inizio del viewport
+                });
+                // Optional: Update URL hash without jumping (for bookmarking/history)
+                // if(history.pushState) {
+                //    history.pushState(null, null, targetId);
+                //} else {
+                //    location.hash = targetId; // Fallback for older browsers
+                //}
+              } else {
+                console.warn('Elemento target non trovato per l\'ID:', targetId);
+              }
+            } catch (e) {
+              console.error('Errore nel trovare o scrollare all\'elemento:', targetId, e);
+            }
+          }
+        });
+      }
+    });
+  </script>
+  
+      
+      <!-- === SCRIPT PER INIZIALIZZARE LA MAPPA LEAFLET === -->
+      <!-- ... codice HTML precedente ... -->
+      
+      <!-- === SCRIPT PER INIZIALIZZARE LA MAPPA LEAFLET (MODIFICATO) === -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+          try {
+            const carboniaCoords = [39.1685, 8.5215];
+            const initialZoom = 15;
+
+            const mapContainer = document.getElementById('map-container');
+
+            if (mapContainer) {
+              const loadingMessage = mapContainer.querySelector('p');
+              if (loadingMessage) {
+                mapContainer.removeChild(loadingMessage);
+              }
+
+              const map = L.map('map-container').setView(carboniaCoords, initialZoom);
+
+              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
+                maxZoom: 19
+              }).addTo(map);
+
+              console.log('Mappa Leaflet inizializzata.');
+
+              // --- AGGIUNTA MARKER ---
+
+              // 1. DATI DEI MARKER (DEVI COMPILARE QUESTO ARRAY CON I TUOI DATI!)
+              const markerData = [
+                // ESEMPI (SOSTITUISCI CON LE TUE COORDINATE E INFO REALI!)
+                {
+                  coords: [39.1708, 8.5214], // <-- TROVA LE COORDINATE ESATTE! (Esempio Piazza Roma)
+                  title: 'Via Roma',
+                  originalTitle: 'Viale Impero',
+                  category: 'rinominata', // Tipo per icona/colore
+                  desc: 'Principale arteria, originariamente Viale Impero, simbolo della conquista fascista.'
+                },
+                {
+                  coords: [39.1680, 8.5215], // <-- TROVA LE COORDINATE ESATTE! (Esempio Piazza Matteotti)
+                  title: 'Piazza Matteotti',
+                  originalTitle: 'Piazza Impero',
+                  category: 'rinominata',
+                  desc: 'Originariamente Piazza Impero, ora dedicata al deputato socialista ucciso dai fascisti.'
+                },
+                {
+                  coords: [39.1721, 8.5200], // <-- TROVA LE COORDINATE ESATTE! (Esempio Viale Gramsci)
+                  title: 'Viale Antonio Gramsci',
+                  originalTitle: 'Viale Principe di Piemonte',
+                  category: 'rinominata',
+                  desc: 'Ex Viale Principe di Piemonte, oggi dedicato al politico e filosofo antifascista sardo.'
+                },
+                {
+                  coords: [39.1668, 8.5195], // <-- TROVA LE COORDINATE ESATTE! (Esempio Via Partigiani)
+                  title: 'Via dei Partigiani',
+                  originalTitle: 'Via dei Legionari',
+                  category: 'rinominata',
+                  desc: 'Sostituisce Via dei Legionari (milizia fascista) con i combattenti della Resistenza.'
+                },
+                {
+                  coords: [39.1655, 8.5229], // <-- TROVA LE COORDINATE ESATTE! (Esempio Piazza Minatore)
+                  title: 'Piazza del Minatore',
+                  originalTitle: '', // Non aveva un nome diverso specifico?
+                  category: 'moderna', // O 'simbolo'
+                  desc: 'Simbolo dell\'identità mineraria e delle dure condizioni di lavoro.'
+                },
+                {
+                  coords: [39.1692, 8.5148], // <-- TROVA LE COORDINATE ESATTE! (Esempio Via XXIII Marzo / Via Verona?)
+                  title: 'Via XXIII Marzo / Via Verona',
+                  originalTitle: 'Via XXIII Marzo',
+                  category: 'originale-controversa',
+                  desc: 'Commemora la fondazione dei Fasci di Combattimento. Targa storica ancora presente.'
+                }
+                // ... AGGIUNGI QUI TUTTI GLI ALTRI LUOGHI CHE VUOI MARCARE ...
+                // (Via Costituente, Mazzini, Fosse Ardeatine, Berlinguer, Rinascita, Oberhausen, Gobetti, Tripoli, ecc.)
+              ];
+
+              // 2. (Opzionale) DEFINIRE ICONE PERSONALIZZATE
+              // Per ora usiamo l'icona di default, poi possiamo personalizzare i colori/forme
+              // const redIcon = new L.Icon({...}); 
+              // const yellowIcon = new L.Icon({...});
+              // const blueIcon = new L.Icon({...});
+
+              // 3. CICLARE SUI DATI E AGGIUNGERE I MARKER ALLA MAPPA
+              markerData.forEach(data => {
+                let markerOptions = {};
+                // Qui potremmo assegnare icone diverse in base a data.category
+                // if (data.category === 'rinominata') markerOptions.icon = redIcon;
+                // else if (data.category === 'originale-controversa') markerOptions.icon = yellowIcon;
+                // etc...
+
+                const marker = L.marker(data.coords, markerOptions).addTo(map);
+
+                // Crea il contenuto del popup
+                let popupContent = `<b>${data.title}</b>`;
+                if (data.originalTitle) {
+                  popupContent += `<br><small>(Ex ${data.originalTitle})</small>`;
+                }
+                popupContent += `<br><hr style="margin: 3px 0;">${data.desc}`; // Aggiunge descrizione
+
+                marker.bindPopup(popupContent);
+              });
+
+            } else {
+              console.error('Elemento container della mappa (#map-container) non trovato!');
+            }
+
+          } catch (error) {
+            console.error('Errore durante l\'inizializzazione o aggiunta marker:', error);
+            const mapContainer = document.getElementById('map-container');
+            if (mapContainer) {
+              mapContainer.innerHTML = '<p style="padding: 20px; text-align: center; color: red;">Errore nel caricamento della mappa o dei marker.</p>';
+            }
+          }
+
+        }); // Fine DOMContentLoaded per la mappa
+      </script>
+      <!-- === FINE SCRIPT MAPPA === -->
+      
+      </body>
+      
+      </html>
