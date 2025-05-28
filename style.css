@@ -250,3 +250,35 @@ p{
   color: #f5f5dc;
   text-decoration: none;
 }
+/* Stili specifici per l'immagine gramsci.jpg e la sua didascalia */
+.figure-gramsci img {
+  max-width: 100%;
+  /* Assicura che l'immagine non superi la larghezza del suo contenitore */
+  height: auto;
+  /* Mantiene le proporzioni dell'immagine */
+  display: block;
+  /* Rimuove lo spazio extra sotto l'immagine */
+  margin: 0 auto;
+  /* Centra l'immagine orizzontalmente */
+  border-radius: 8px;
+  /* Aggiunge angoli arrotondati, se desiderato */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Aggiunge una leggera ombra */
+  /* Puoi aggiungere qui altri stili specifici per questa immagine, es. un bordo */
+  /* border: 2px solid #ccc; */
+}
+
+.figure-gramsci figcaption {
+  text-align: center;
+  /* Centra la didascalia sotto l'immagine */
+  font-style: italic;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  /* Spazio sotto la figura */
+}
+
+/* Se hai già stili generali per .contenuto figure o .contenuto figure img,
+ questi stili specifici (con .figure-gramsci) li sovrascriveranno solo per questa figura,
+ grazie alla maggiore specificità del selettore. */
